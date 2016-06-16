@@ -20,7 +20,11 @@ import com.broadcom.cooee.Cooee;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
+/**
+ * Foream配置參數界面
+ * @author RanQing
+ * create at 16-6-16 下午4:36
+ */
 public class ConfigActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = ConfigActivity.class.getName();
@@ -153,15 +157,17 @@ public class ConfigActivity extends BaseActivity implements View.OnClickListener
                 mCodeRateTV.setText(DataUtil.formatNum(codeRate));
                 break;
             case R.id.btn_commit:
-                startSendSmartConfig();
+                checkInputInfo();
                 break;
             default:
                 break;
         }
     }
 
-    // 开始发送Ssid 密码给CAMERA
-    private void startSendSmartConfig() {
+    /**
+     * 验证输入信息
+     */
+    private void checkInputInfo() {
         if (TextUtils.isEmpty(mUnknownET.getText())) {
             mUnknownET.setError(getString(R.string.error_input_unknown));
             return;
@@ -243,6 +249,11 @@ public class ConfigActivity extends BaseActivity implements View.OnClickListener
         mRun = false;
     }
 
+    /**
+     * 域名转换为ip
+     *
+     * @param domain
+     */
     private void parseDomain2Ip(final String domain) {
         if (TextUtils.isEmpty(domain)) {
             return;

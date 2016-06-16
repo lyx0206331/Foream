@@ -10,7 +10,9 @@ import com.adrian.foream.application.MyApplication;
 import java.text.DecimalFormat;
 
 /**
- * Created by adrian on 16-6-8.
+ * 數據存儲工具類
+ * @author RanQing
+ * create at 16-6-16 下午4:45
  */
 public class DataUtil {
 
